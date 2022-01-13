@@ -1,5 +1,12 @@
 package com.techreturners.cats;
 
-interface Cat {
+public interface Cat {
 
+    String eat();
+    void run();
+    void goToSleep();
+    void wakeUp();
+    boolean getIsAsleep();
+    int getAverageHeight();
+    Setting getSetting();
 }

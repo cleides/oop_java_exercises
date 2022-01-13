@@ -9,28 +9,31 @@ public class CatTest {
     @Test
     public void checkCatIsAwake() {
         Cat domesticCat = new DomesticCat();
-        assertFalse("Cat should be awake by default", domesticCat.isAsleep());
+        assertFalse("Cat should be awake by default", domesticCat.getIsAsleep());
     }
 
     @Test
     public void checkCatCanGoToSleep() {
         Cat domesticCat = new DomesticCat();
         domesticCat.goToSleep();
-        assertTrue("Cat should be snoozing", domesticCat.isAsleep());
+        assertTrue("Cat should be snoozing", domesticCat.getIsAsleep());
     }
 
     @Test
-    public void checkCatCanWakep() {
+    public void checkCatCanWakeup() {
+        // Arrange
         Cat domesticCat = new DomesticCat();
+        // Act
         domesticCat.goToSleep();
         domesticCat.wakeUp();
-        assertFalse("Cat should be awake now", domesticCat.isAsleep());
+        // Assert
+        assertFalse("Cat should be awake now", domesticCat.getIsAsleep());
     }
 
     @Test
     public void checkCatSetting() {
         Cat domesticCat = new DomesticCat();
-        assertEquals("domestic", domesticCat.getSetting());
+        assertEquals(Setting.DOMESTIC, domesticCat.getSetting());
     }
 
     @Test
@@ -42,7 +45,7 @@ public class CatTest {
     @Test
     public void checkLionHeight() {
         Cat lionCat = new LionCat();
-        assertEquals(1100, lionCat.getAverageHeight());
+        assertEquals(110, lionCat.getAverageHeight());
     }
 
 

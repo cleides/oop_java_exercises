@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+DomesticCat --|> AbstractCat
+LionCat --|> AbstractCat
+CheetahCat --|> AbstractCat
+AbstractCat --> Setting
+AbstractCat ..|> Cat
+
+'# are protected properties, private to the outside but
+' public to all child classes
+abstract class AbstractCat {
+#isAsleep: boolean
+#averageHeight: Integer
+#setting: Setting
+
++eat(): String
++goToSleep(): void
++wakeUp(): void
++run(): void
++getIsAsleep(): boolean
++getAverageHeight(): Integer
++getSetting(): Setting
+
+}
+class LionCat {
++eat(): String
+}
+class CheetahCat {
++eat(): String
+}
+class DomesticCat {
++eat(): String
+}
+
+enum Setting {
++domestic:
++wild:
+}
+
+interface Cat {
++eat(): String
++goToSleep(): void
++wakeUp(): void
++run(): void
++getIsAsleep(): boolean
++getAverageHeight(): Integer
++getSetting(): Setting
+
+}
+@enduml
